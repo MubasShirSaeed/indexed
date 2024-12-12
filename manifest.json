@@ -1,0 +1,36 @@
+{
+    "manifest_version": 3,
+    "name": "Indexed or not indexed",
+    "version": "1.0",
+    "description": "A basic Chrome extension to check if the page is indexed or not indexed.",
+    "permissions": [
+      "storage",
+      "tabs",
+      "activeTab"
+    ],
+    "host_permissions": [
+      "https://*/*",
+      "http://*/*"
+    ],
+    "action": {
+      "default_popup": "popup.html",
+      "default_icon": {
+        "48": "icon.png"
+        
+      }
+    },
+    "background": {
+      "service_worker": "background.js"
+    },
+    "content_scripts": [
+      {
+        "matches": ["https://*/*", "http://*/*"],
+        "js": ["content.js"],
+        "css": ["styles.css"]
+      }
+    ],
+    "icons": {
+      "48": "icon.png"
+    }
+  }
+  
